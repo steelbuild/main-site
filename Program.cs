@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Markdig;
 
@@ -22,8 +23,8 @@ namespace main_site
         var markdown = await File.ReadAllTextAsync(file);
 
         var html = Markdown.ToHtml(markdown);
-
-        await File.WriteAllTextAsync(Path.Combine(dist, fileInfo.Name), html);
+        var htmlFilePath = Path.ChangeExtension(Path.Combine(dist, fileInfo.Name), "html");
+        await File.WriteAllTextAsync(htmlFilePath, html, Encoding.UTF8);
       }
     }
   }
