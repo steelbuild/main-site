@@ -1,0 +1,19 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: DotNetCoreInstaller@0
+  inputs:
+    packageType: 'sdk'
+    version: '2.2.104' 
+
+- script: dotnet run src dist
+  displayName: 'Running Build'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: 'dist'
+    artifactName: drop
