@@ -1,0 +1,7 @@
+language: csharp
+mono: none
+dotnet: 2.2.104
+
+jobs:
+  include:
+    - script: dotnet run src dist
