@@ -20,6 +20,9 @@ steps:
 - script: dotnet run src dist
   displayName: 'Running Build'
 
+- script: dotnet test --logger:trx
+  displayName: 'Running Tests'
+
 - script: docker build -t steelbuild/main-site:$(Build.BuildId) .
 - script: docker tag steelbuild/main-site:$(Build.BuildId) steelbuild/main-site:latest
 
@@ -30,3 +33,8 @@ steps:
   inputs:
     pathtoPublish: 'dist'
     artifactName: drop
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'VSTest'
+    testResultsFiles: '**/TEST-*.trx' 
