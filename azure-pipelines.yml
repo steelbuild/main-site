@@ -17,10 +17,10 @@ steps:
     packageType: 'sdk'
     version: '2.2.104' 
 
-- script: dotnet run src dist
+- script: dotnet run --project main-site.csproj src dist
   displayName: 'Running Build'
 
-- script: dotnet test --logger:trx
+- script: dotnet test main-site-tests.csproj --logger:trx
   displayName: 'Running Tests'
 
 - script: docker build -t steelbuild/main-site:$(Build.BuildId) .
@@ -38,4 +38,4 @@ steps:
   condition: succeededOrFailed()
   inputs:
     testResultsFormat: 'VSTest'
-    testResultsFiles: '**/TEST-*.trx' 
+    testResultsFiles: '**/*.trx'

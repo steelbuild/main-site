@@ -5,4 +5,4 @@ dotnet: 2.2.105
 
 jobs:
   include:
-    - script: dotnet run src dist
+    - script: dotnet run --project main-site.csproj src dist

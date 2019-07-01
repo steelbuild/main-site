@@ -6,7 +6,7 @@ branches:
 
 image: Ubuntu
 
-build_script: dotnet run src dist
+build_script: dotnet run --project main-site.csproj src dist
 
 artifacts:
   - path: dist
