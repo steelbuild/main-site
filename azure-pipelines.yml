@@ -35,6 +35,7 @@ steps:
     artifactName: drop
 
 - task: PublishTestResults@2
+  condition: succededOrFailed()
   inputs:
     testResultsFormat: 'VSTest'
     testResultsFiles: '**/TEST-*.trx' 
