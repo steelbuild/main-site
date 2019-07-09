@@ -27,7 +27,10 @@ steps:
 - script: docker tag steelbuild/main-site:$(Build.BuildId) steelbuild/main-site:latest
 
 - script: docker push steelbuild/main-site:$(Build.BuildId)
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+
 - script: docker push steelbuild/main-site:latest
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
 
 - task: PublishBuildArtifacts@1
   inputs:
