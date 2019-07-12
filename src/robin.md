@@ -1,2 +1,2 @@
-![digininja](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "My Logo")
+![digininja](https://www.steelcon.info/wp-content/uploads/2016/03/xsteelcon-logo-wp.png.pagespeed.ic.NinTb0poPT.webp "My Logo")
 
