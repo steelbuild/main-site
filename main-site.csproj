@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="markdown-to-html" Version="1.0.32" />
+    <PackageReference Include="markdown-to-html" />
     <PackageReference Include="xunit" Version="2.4.1" />
   </ItemGroup>
 
